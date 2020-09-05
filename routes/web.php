@@ -13,8 +13,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+// link catre o pagina '/', ['as'=>'home'function () {return view('welcome');}]
+Route::get('/', ['as'=>'home',function () {
+    return view('welcome');
+}]);
+
+
+// return redirect()->route('article',array('id'=>25)); domen/article/20
+Route::get('/article/{id}', ['as'=>'article',function ($id) {
+    echo $id;
+}]);
+
+Route::group(['prefix'=>'admin/{id}'], function (){
+
+    Route::get('page/aplicatii/{var}', function ($id) {
+        $route = Route::current();
+        //echo $route->getName();
+        //echo $route->getParameter('var', 24);
+        print_r($route->parameters());
+    })->name('name_route_aplicatii');
+
+
+    Route::get('page/contacts', function () {
+        return redirect()->route('article',array('id'=>25));
+        // accesez in browser http://127.0.0.1:8000/admin/page/contacts
+        /*Route::get('page/contacts', function () {
+        echo route('home');*/
+    });
+
+
+    Route::get('page/create', function () {
+        echo 'page/create';
+    });
+
+    Route::get('page/edit', function () {
+        echo 'page/edit';
+    });
+
 });
 
 Route::get('/page', function () {
@@ -26,6 +65,16 @@ Route::post('/comments', function () {
     print_r($_POST);
     echo '<pre>';
 });
+
+Route::get('user/{id}', function ($id) {
+    // Only executed if {id} is numeric...
+    echo $id;
+});
+
+//Route::get('user', function () {
+//    // Only executed if {id} is numeric...
+//    echo rand(1, 1111);
+//});
 
 /*Route::match(['get', 'post'],'/comments', function () {
     print_r($_POST);
@@ -76,8 +125,29 @@ Route::post('/comments', function () {
     echo $id;
 })->where(['id'=>'[0-9]+']);*/
 
-Route::get('/test/{cat}/{id}', function ($id){
+/*Route::get('/test/{cat}/{id}', function ($id){
     echo $id;
-})/*->where(['id'=>'[0-9]+','cat'=>'[A-Za-z]+'])*/;
+})/*->where(['id'=>'[0-9]+','cat'=>'[A-Za-z]+']);*/
+
+Route::post('/test', function () {
+    print_r($_POST);
+});
+
+
+// ['prefix'=>'admin'], ['prefix'=>'admin/id'] prefixul pentru uri pentru toate paginile din grupul admin
+// ['prefix'=>'admin/id'] parametru la prefix
+/*Route::group(['prefix'=>'admin'], function (){
+
+    Route::get('page/create', function () {
+        echo 'page/create';
+    });
+
+    Route::get('page/edit', function () {
+        echo 'page/edit';
+    });
+
+    Route::get('page/contacts', function () {
+        echo 'page/contacts';
+    });*/
 
 
