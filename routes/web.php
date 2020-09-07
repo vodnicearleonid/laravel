@@ -12,12 +12,40 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/about/{id}', 'FirstController@show');
+// Route::get('/pages', 'FirstController@Pages');
+Route::get('/articles', ['uses'=>'Admin/Core@getArticles','as'=>'articles']);
+Route::get('/article{id}', ['uses'=>'Admin/Core@getArticle','as'=>'article']);
+
+//lista de pagini si care sunt excluse, in cazul de mai jos sunr t permise numei index si show accesind pages, ne va redirectiona pe index
+//['only'=>['except', 'show']]
+//['only'=>['index', 'show']]
+//Route::get('pages/add', 'Admin\CoreResource@add');
+//Route::resource('/pages', 'Admin\CoreResource', ['except'=>['index', 'show']]);//pages.index pages.store
+
+//Route::controller('/pages','PagesController');
+Route::resource('/pages','PagesController', ['getCreate'=>'pages.create']);
+
+
+
+
+
+
+
+
+
+
+
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
-// link catre o pagina '/', ['as'=>'home'function () {return view('welcome');}]
+/*// link catre o pagina '/', ['as'=>'home'function () {return view('welcome');}]
 Route::get('/', ['as'=>'home',function () {
     return view('welcome');
 }]);
@@ -26,7 +54,7 @@ Route::get('/', ['as'=>'home',function () {
 // return redirect()->route('article',array('id'=>25)); domen/article/20
 Route::get('/article/{id}', ['as'=>'article',function ($id) {
     echo $id;
-}]);
+}]);*/
 
 Route::group(['prefix'=>'admin/{id}'], function (){
 
@@ -56,7 +84,7 @@ Route::group(['prefix'=>'admin/{id}'], function (){
 
 });
 
-Route::get('/page', function () {
+/*Route::get('/page', function () {
     return view('page');
 });
 
@@ -69,7 +97,7 @@ Route::post('/comments', function () {
 Route::get('user/{id}', function ($id) {
     // Only executed if {id} is numeric...
     echo $id;
-});
+});*/
 
 //Route::get('user', function () {
 //    // Only executed if {id} is numeric...
@@ -129,9 +157,9 @@ Route::get('user/{id}', function ($id) {
     echo $id;
 })/*->where(['id'=>'[0-9]+','cat'=>'[A-Za-z]+']);*/
 
-Route::post('/test', function () {
+/*Route::post('/test', function () {
     print_r($_POST);
-});
+});*/
 
 
 // ['prefix'=>'admin'], ['prefix'=>'admin/id'] prefixul pentru uri pentru toate paginile din grupul admin
