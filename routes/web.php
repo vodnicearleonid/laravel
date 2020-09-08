@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,7 +21,19 @@ Route::get('/', function () {
 Route::get('/about/{id}', 'FirstController@show');
 // Route::get('/pages', 'FirstController@Pages');
 Route::get('/articles', ['uses'=>'Admin/Core@getArticles','as'=>'articles']);
-Route::get('/article{id}', ['uses'=>'Admin/Core@getArticle','as'=>'article']);
+
+
+Route::get('/article{page}', ['uses'=>'Admin/Core@getArticle','as'=>'article', 'middleware'=>'mymiddle']);
+
+
+/*Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/about/{id}', 'FirstController@show');
+// Route::get('/pages', 'FirstController@Pages');
+Route::get('/articles', ['uses'=>'Admin/Core@getArticles','as'=>'articles']);
+Route::get('/article{id}', ['uses'=>'Admin/Core@getArticle','as'=>'article']);*/
 
 //lista de pagini si care sunt excluse, in cazul de mai jos sunr t permise numei index si show accesind pages, ne va redirectiona pe index
 //['only'=>['except', 'show']]
@@ -28,7 +42,7 @@ Route::get('/article{id}', ['uses'=>'Admin/Core@getArticle','as'=>'article']);
 //Route::resource('/pages', 'Admin\CoreResource', ['except'=>['index', 'show']]);//pages.index pages.store
 
 //Route::controller('/pages','PagesController');
-Route::resource('/pages','PagesController', ['getCreate'=>'pages.create']);
+/*Route::resource('/pages','PagesController', ['getCreate'=>'pages.create']);*/
 
 
 
@@ -55,7 +69,7 @@ Route::get('/', ['as'=>'home',function () {
 Route::get('/article/{id}', ['as'=>'article',function ($id) {
     echo $id;
 }]);*/
-
+/*
 Route::group(['prefix'=>'admin/{id}'], function (){
 
     Route::get('page/aplicatii/{var}', function ($id) {
@@ -70,7 +84,7 @@ Route::group(['prefix'=>'admin/{id}'], function (){
         return redirect()->route('article',array('id'=>25));
         // accesez in browser http://127.0.0.1:8000/admin/page/contacts
         /*Route::get('page/contacts', function () {
-        echo route('home');*/
+        echo route('home');
     });
 
 
@@ -83,7 +97,7 @@ Route::group(['prefix'=>'admin/{id}'], function (){
     });
 
 });
-
+*/
 /*Route::get('/page', function () {
     return view('page');
 });
