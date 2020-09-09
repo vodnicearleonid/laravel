@@ -12,19 +12,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', ['as'=>'welcome', 'uses'=>'Admin\IndexController@show']);
+//Route::get('/', ['as'=>'home', 'middleware'=>'auth', 'uses'=>'Admin\IndexController@show']);
 
-
-Route::get('/', function () {
+/*Route::get('/', function ()
+{
     return view('welcome');
-});
+})->name('welcome');*/
 
-Route::get('/about/{id}', 'FirstController@show');
+//Route::get('/about/{id}', 'FirstController@show');
 // Route::get('/pages', 'FirstController@Pages');
-Route::get('/articles', ['uses'=>'Admin/Core@getArticles','as'=>'articles']);
+//Route::get('/articles', ['uses'=>'Admin\Core@getArticles','as'=>'articles']);
 
 
-Route::get('/article{page}', ['uses'=>'Admin/Core@getArticle','as'=>'article', 'middleware'=>'mymiddle']);
+Route::get('/article/{page}', ['middleware'=>'mymiddle:admin','uses'=>'Admin\Core@getArticle','as'=>'article'])/*->middleware(['mymiddle'])*/;
+/*Route::get('/article/{page}', 'Admin\Core@getArticle')
+    ->name('article')
+    ->middleware('mymiddle');*/
 
+
+
+/*Route::group(['middleware'=>['web']], function (){
+
+    //
+
+});*/
 
 /*Route::get('/', function () {
     return view('welcome');
