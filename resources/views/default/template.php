@@ -20,10 +20,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php /*echo route('home'); */?>">Home</a></li>
-                <li><a href="<?php /*echo route('about'); */?>">About</a></li>
-                <li><a href="<?php /*echo route('articles'); */?>">Articles</a></li>
-                <li><a href="<?php /*echo route('article',array('id'=>10)); */?>">Article</a></li>
+                <li class="active"><a href="<?php echo route('home');?>">Home</a></li>
+                <li><a href="<?php echo route('about');?>">About</a></li>
+                <li><a href="<?php echo route('articles');?>">Articles</a></li>
+                <li><a href="<?php echo route('article',array('id'=>10));?>">Article</a></li>
             </ul>
         </div><!--/.navbar-collapse -->
     </div>

@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', ['as'=>'welcome', 'uses'=>'Admin\IndexController@show']);
+Route::get('/', ['/welcome', 'uses'=>'Admin\IndexController@show','as'=>'home']);
+Route::get('/about', ['uses'=>'Admin\AboutController@show','as'=>'about']);
+Route::get('/articles', ['uses'=>'Admin\Core@getArticles','as'=>'articles']);
+Route::get('/article/{id}', [/*'middleware'=>'mymiddle:admin',*/'uses'=>'Admin\Core@getArticle','as'=>'article']);
 //Route::get('/', ['as'=>'home', 'middleware'=>'auth', 'uses'=>'Admin\IndexController@show']);
 
 /*Route::get('/', function ()
@@ -25,7 +28,7 @@ Route::get('/', ['as'=>'welcome', 'uses'=>'Admin\IndexController@show']);
 //Route::get('/articles', ['uses'=>'Admin\Core@getArticles','as'=>'articles']);
 
 
-Route::get('/article/{page}', ['middleware'=>'mymiddle:admin','uses'=>'Admin\Core@getArticle','as'=>'article'])/*->middleware(['mymiddle'])*/;
+//Route::get('/article/{page}', ['middleware'=>'mymiddle:admin','uses'=>'Admin\Core@getArticle','as'=>'article'])/*->middleware(['mymiddle'])*/;
 /*Route::get('/article/{page}', 'Admin\Core@getArticle')
     ->name('article')
     ->middleware('mymiddle');*/

@@ -7,10 +7,55 @@ use app\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    //
+
     public function show(){
 
-        return view('default.template')->withTitle('Hello World'); // 5. alta modalitate de transmite datele in variabila din view ->withTitle('Hello World')
+    /*
+     // 6. modalitate cu verificare daca exista 'default.template' functia view() intoarce adevarat sau fals, daca e true intoarce return view('default.template')->withTitle('Hello World');
+    if (view()->exists('default.template')){
+        return view('default.template')->withTitle('Hello World');
+     }
+    */
+
+
+
+
+    if (view()->exists('default.template')){
+        $view = view('default.template', ['title'=>'Hello World'])->render();
+        echo $view;
+        return;
+    }
+
+    // vedem drumul template cu care lucram acum
+    /*echo view('default.template', ['title'=>'Hello World'])->getPath();
+    return;*/
+
+
+
+
+
+
+        /*
+        if (view()->exists('default.template')){
+
+                   view()->name('default.template','myview');
+                   return view()->of('myview')->withTitle('Hello World');
+               }// nu functioneaza
+        */
+
+        /*
+
+         if (view()->exists('default.template')){
+              $path = config(view.paths);
+              return view()->file($path[0].'/default/template.php')->withTitle('Hello World');
+          }else{
+              echo 'default.template nu exista!';
+              //abort(404);
+          }// nu merge, da eroare
+
+          */
+
+        //return view('default.template')->withTitle('Hello World'); // 5. alta modalitate de transmite datele in variabila din view ->withTitle('Hello World')
 
         /*//4. alta modalitate de a transmite datele in view
         $view_variable = view('default.template');
