@@ -10,16 +10,23 @@ class IndexController extends Controller
 
     public function show(){
 
-    /*
-     // 6. modalitate cu verificare daca exista 'default.template' functia view() intoarce adevarat sau fals, daca e true intoarce return view('default.template')->withTitle('Hello World');
-    if (view()->exists('default.template')){
-        return view('default.template')->withTitle('Hello World');
-     }
-    */
+        $array = array(
 
+            'title'=>'Laravel Project',
+            'data'=>[
+                        'one'=>'List 1',
+                        'two'=>'List 2',
+                        'three'=>'List 3',
+                        'four'=>'List 4',
+                        'five'=>'List 5',
+                    ],
+            'dataI'=>['List 01','List 02','List 03','List 04','List 05'],
+            'bvar'=>true,
+            'script'=>"<script>alert('hello')</script>"
+        );
 
     if (view()->exists('default.index')){
-        $view = view('default.index', ['title'=>'Hello World'])->render();
+        $view = view('default.index', $array)->render();
         echo $view;
         return;
     }
@@ -28,9 +35,12 @@ class IndexController extends Controller
     /*echo view('default.template', ['title'=>'Hello World'])->getPath();
     return;*/
 
-
-
-
+        /*
+         // 6. modalitate cu verificare daca exista 'default.template' functia view() intoarce adevarat sau fals, daca e true intoarce return view('default.template')->withTitle('Hello World');
+        if (view()->exists('default.template')){
+            return view('default.template')->withTitle('Hello World');
+         }
+        */
 
 
         /*
@@ -40,6 +50,7 @@ class IndexController extends Controller
                    return view()->of('myview')->withTitle('Hello World');
                }// nu functioneaza
         */
+
 
         /*
 

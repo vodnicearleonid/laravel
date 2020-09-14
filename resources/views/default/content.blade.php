@@ -1,5 +1,56 @@
 <div class="col-md-9">
 
+{{--
+    {{ $script }}
+
+    {!! $script !!}
+
+    {{ isset($bvar ?? '') ? $bvar ?? '' : $title }}
+
+    {{ $bvar ?? '' or $title }}
+
+    @if(count($data) < 3)
+        Masivul contine mai putin de trei elemente
+    @else
+        Masivul contine mai mult de trei elemente
+    @endif
+
+    @if(count($data) < 3)
+        Masivul contine mai putin de trei elemente
+    @elseif(count($data) > 10)
+        Masivul contine mai putin de trei elemente
+    @else
+        In masiv nu se cunoaste cite elemente contine
+    @endif
+
+    <ul>
+        @for($i = 0; $i < count($dataI); $i++)
+            <li>{{ $dataI[$i] }}</li>
+        @endfor
+    </ul>
+
+    <ul>
+        @foreach($data as $k=>$value)
+            <li>{{ $k. '=>' .$value }}</li>
+        @endforeach
+    </ul>
+
+    <ul>
+        @forelse($data as $k=>$value)
+            <li>{{ $k. '=>' .$value }}</li>
+        @empty
+            <p>no items</p>
+        @endforelse
+    </ul>
+
+    @while(FALSE)
+        <p>I'm loping forever.</p>
+    @endwhile
+
+    @each('default.list', $dataI, 'value') //comod..
+--}}
+    @myDir('Hello')
+
     <div class="col-md-6">
         <h2>Heading</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>

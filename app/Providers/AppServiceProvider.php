@@ -2,6 +2,7 @@
 
 namespace app\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Blade::directive('myDir', function ($var){
+            return "<h1>new directive - $var</h1>";
+        });
     }
 }
