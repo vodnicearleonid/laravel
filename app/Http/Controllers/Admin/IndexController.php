@@ -18,10 +18,8 @@ class IndexController extends Controller
     */
 
 
-
-
-    if (view()->exists('default.template')){
-        $view = view('default.template', ['title'=>'Hello World'])->render();
+    if (view()->exists('default.index')){
+        $view = view('default.index', ['title'=>'Hello World'])->render();
         echo $view;
         return;
     }

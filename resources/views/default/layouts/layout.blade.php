@@ -13,6 +13,7 @@
 </head>
 <body>
 
+@section('navbar')
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -28,7 +29,9 @@
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
+@show
 
+@section('header')
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
@@ -39,28 +42,39 @@
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
 </div>
+@show
+
 
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-md-3">
+        @section('sidebar')
+            <div class="sidebar-module">
+                <h2>Archives</h2>
+                <ol class="list-unstyled">
+                    <li><a href="#">March 2014</a></li>
+                    <li><a href="#">February 2014</a></li>
+                    <li><a href="#">January 2014</a></li>
+                    <li><a href="#">December 2013</a></li>
+                    <li><a href="#">November 2013</a></li>
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                    <li><a href="#">June 2013</a></li>
+                    <li><a href="#">May 2013</a></li>
+                    <li><a href="#">April 2013</a></li>
+                </ol>
+            </div>
+        @show
         </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
 
-    <hr>
+    @yield('content')
+
+        </div>
+
+        <hr>
 
     <footer>
         <p>&copy; 2015 Company, Inc.</p>
