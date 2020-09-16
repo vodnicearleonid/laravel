@@ -18,6 +18,7 @@ class Kernel extends HttpKernel
         \app\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \app\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \app\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
