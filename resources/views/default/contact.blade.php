@@ -2,15 +2,14 @@
 
 @section('content')
 
-    <pre>
-        {{ print_r(Session::all) }}
-    </pre>
-
+    {{--<pre>
+        {{ print_r(Session::all()) }}
+    </pre>--}}
 <div class="col-md-9">
 
-		<pre>
+		{{--<pre>
 		{{ print_r(Session::all()) }}
-		</pre>
+		</pre>--}}
 
 	<div class="">
 		<h2>Contact us!</h2>
