@@ -2,7 +2,7 @@
 
 namespace app\Http\Controllers\Admin;
 
-use http\Env\Response;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
 
@@ -13,23 +13,18 @@ class AboutController extends Controller
 
          if (view()->exists('default.about')){
 
-             $view = $view('default.about')->withTitle('Hello World')->render();
-             /*return (new Response($view))
-                                ->header('Content-Type','newType')
-                                ->header('Header-One','headerTest')
-                                ;*/
 
-/*             return response($view)
-                        ->header('Content-Type','newType')
-                         ->header('Header-One','headerTest')
-                         ;*/
+             $view = view('default.about', ['title'=>'Hello World']);
+             echo $view;
+             return;
 
              //return response()->json(['title'=>'Hello World','title_test'=>'Hello World']);
-             return response()->view();
+             //return response()->view('default.about', ['title'=>'Hello World']);
 
-             /*$view = view('default.about', ['title'=>'Hello World'])->render();
-             echo $view;
-             return;*/
+
+                 /*return response('Hello World', 200)
+                     ->header('Content-Type', 'text/plain');*/
+
          }
 
      }
