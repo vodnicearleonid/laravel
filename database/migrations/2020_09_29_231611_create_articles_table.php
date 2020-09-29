@@ -14,9 +14,12 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->id(); //id INT AUTO_INCREMENT PRIMARY KEY
+
+            //$table->engine = 'InnoDB';
+
+            $table->id();
             $table->string('name', 100);
-            $table->text('description');
+            $table->text('text');
             $table->string('img', 255);
             $table->timestamps();
         });
