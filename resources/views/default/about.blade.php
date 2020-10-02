@@ -34,4 +34,9 @@
             <p class="lead">Это модифицированный jumbotron, который пространство своего родителя.</p>
         </div>
     </div>
+
+    @foreach($items AS $item)
+        <h1>{{ $item->name }}</h1>
+        <pre>{!! $item->text  !!}</pre>
+    @endforeach
 @endsection
