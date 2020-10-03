@@ -9,6 +9,23 @@
 @endsection
 
 @section('content')
+
+{{--    @foreach($items AS $item)
+        <h2>{{ $item->title }}</h2>
+        <pre>{{ $item->description }}</pre>
+        <pre>{{ $item->author }}</pre>
+    @endforeach--}}
+
+    @foreach ($homeworks as $homework)
+        @continue($homework->type == 1)
+
+        <pre>{{ $homework->title }}</pre>
+        <pre>{{ $homework->description }}</pre>
+        <pre>{{ $homework->author }}</pre>
+
+        @break($homework->number == 3)
+    @endforeach
+
     <div class="jumbotron">
         <h2 class="display-4">Hello, About!</h2>
         <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания к содержанию или информации.</p>

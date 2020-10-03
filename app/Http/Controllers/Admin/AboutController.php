@@ -15,11 +15,11 @@ class AboutController extends Controller
 
          if (view()->exists('default.about')){
 
-             $articles = DB::select("SELECT * FROM `articles` WHERE id = ?",[6]);
-             dump($articles);//dd();
+          /*   $articles = DB::select("SELECT * FROM `articles` WHERE id = ?",[6]);
+             dump($articles);//dd();*/
 
-             $query = Article::query()
-                 ->select(['id', 'name', 'text'])
+             $query = Homework::query()
+                 ->select(['id', 'title', 'description', 'author'])
                  ->orderBy('created_at', 'DESC');
 
 //             if (3 > 2) {
@@ -28,13 +28,13 @@ class AboutController extends Controller
 //                 $query->where('id', '=', 7);
 //             }
 
-             $articles = $query->get();
+             $homeworks = $query->get();
+/*
+             foreach ($homeworks AS $homework) {
+                dump($homework->id, $homework->title, $homework->description, $homework->author);
+             }*/
 
-//             foreach ($articles AS $article) {
-//                dump($article->id, $article->name, $article->text);
-//             }
-
-             $view = view('default.about', ['title'=>'Hello World', 'items' => $articles]);
+             $view = view('default.about', ['title'=>'Hello World', 'items' => $homeworks]);
              echo $view;
              return;
 

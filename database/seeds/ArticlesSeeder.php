@@ -25,15 +25,17 @@ class ArticlesSeeder extends Seeder
 
     DB::table('articles')->insert(
         [
-            ['name'=>"Sample Blog Post1", 'text'=>"<p>1The point of using Lorem Ipsum is that it has a more-or-less1</p>", 'img'=>'pic2.jpg'],
-            ['name'=>"Sample Blog Post2", 'text'=>"<p>2The point of using Lorem Ipsum is that it has a more-or-less2</p>", 'img'=>'pic3.jpg'],
+            ['name'=>"Sample Blog Post1", 'text'=>"<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>", 'img'=>'pic2.jpg'],
+            ['name'=>"Sample Blog Post2", 'text'=>"<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>", 'img'=>'pic3.jpg'],
+            ['name'=>"Sample Blog Post3", 'text'=>"<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>", 'img'=>'pic3.jpg'],
+            ['name'=>"Sample Blog Post4", 'text'=>"<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>", 'img'=>'pic3.jpg'],
         ]
     );
 
     //3MOD.
 
     Article::create([
-        'name'=>'Sample blog 3',
+        'name'=>'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
         'text'=>'Hello world',
         'img'=>'pic4.jpg',
     ]);
