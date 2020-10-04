@@ -10,21 +10,13 @@
 
 @section('content')
 
-{{--    @foreach($items AS $item)
-        <h2>{{ $item->title }}</h2>
-        <pre>{{ $item->description }}</pre>
-        <pre>{{ $item->author }}</pre>
-    @endforeach--}}
 
-    @foreach ($homeworks as $homework)
-        @continue($homework->type == 1)
+@foreach($items AS $item)
+    <h1>{{ $item->title }}</h1>
+    <pre>{!! $item->description  !!}</pre>
+    <pre>{!! $item->author  !!}</pre>
+@endforeach
 
-        <pre>{{ $homework->title }}</pre>
-        <pre>{{ $homework->description }}</pre>
-        <pre>{{ $homework->author }}</pre>
-
-        @break($homework->number == 3)
-    @endforeach
 
     <div class="jumbotron">
         <h2 class="display-4">Hello, About!</h2>

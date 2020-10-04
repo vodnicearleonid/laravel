@@ -3,6 +3,7 @@
 namespace app\Http\Controllers\Admin;
 
 use app\Article;
+use app\Homework;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
