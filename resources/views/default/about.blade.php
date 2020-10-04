@@ -11,10 +11,10 @@
 @section('content')
 
 
-@foreach($items AS $item)
-    <h1>{{ $item->title }}</h1>
-    <pre>{!! $item->description  !!}</pre>
-    <pre>{!! $item->author  !!}</pre>
+@foreach($homeworks AS $homework)
+    <h1>{{ $homework->title }}</h1>
+    <pre>{!! $homework->description  !!}</pre>
+    <pre>{!! $homework->author  !!}</pre>
 @endforeach
 
 
@@ -44,8 +44,8 @@
         </div>
     </div>
 
-    @foreach($items AS $item)
+   {{-- @foreach($items AS $item)
         <h1>{{ $item->name }}</h1>
         <pre>{!! $item->text  !!}</pre>
-    @endforeach
+    @endforeach--}}
 @endsection

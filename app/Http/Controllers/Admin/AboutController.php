@@ -11,7 +11,6 @@ use DB;
 
 class AboutController extends Controller
 {
-    //
      public function show(){
 
          if (view()->exists('default.about')){
@@ -35,7 +34,7 @@ class AboutController extends Controller
                 dump($homework->id, $homework->title, $homework->description, $homework->author);
              }*/
 
-             $view = view('default.about', ['title'=>'Hello World', 'items' => $homeworks]);
+             $view = view('default.about', ['title'=>'Hello World', 'homeworks' => $homeworks]);
              echo $view;
              return;
 
