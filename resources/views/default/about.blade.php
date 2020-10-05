@@ -11,10 +11,34 @@
 @section('content')
 
 
-@foreach($homeworks AS $homework)
+{{--@foreach($homeworks AS $homework)
     <h1>{{ $homework->title }}</h1>
     <pre>{!! $homework->description  !!}</pre>
     <pre>{!! $homework->author  !!}</pre>
+@endforeach--}}
+
+{{--@foreach($tirreport AS $item)
+    <h1>{{ $item->start }}</h1>
+    <pre>{!! $item->stop  !!}</pre>
+    <pre>{!! $item->driver  !!}</pre>
+    <pre>{!! $item->truck  !!}</pre>
+    <pre>{!! $item->author  !!}</pre>
+@endforeach--}}
+
+{{--@foreach($cars AS $item)
+    <h1>{{ $item->producer }}</h1>
+    <pre>{!! $item->body  !!}</pre>
+    <pre>{!! $item->color  !!}</pre>
+    <pre>{!! $item->wheels  !!}</pre>
+    <pre>{!! $item->doors  !!}</pre>
+@endforeach--}}
+
+@foreach($ssds AS $item)
+    <h1>{{ $item->video }}</h1>
+    <pre>{!! $item->photo  !!}</pre>
+    <pre>{!! $item->audio  !!}</pre>
+    <pre>{!! $item->text  !!}</pre>
+    <pre>{!! $item->author  !!}</pre>
 @endforeach
 
 

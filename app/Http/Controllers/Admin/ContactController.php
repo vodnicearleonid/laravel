@@ -15,7 +15,7 @@ class ContactController extends Controller
     }*/
 
 
-    // mai jos, modalitati de afisare a datelor din erray, masiv
+    // mai jos, modalitati de afisare a datelor din array
     public function show(Request $request, $id=FALSE){
         //print_r($request->all());
         //print_r = $request->only('name','site');
