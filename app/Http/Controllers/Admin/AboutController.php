@@ -7,6 +7,7 @@ use app\Homework;
 use app\Tirreport;
 use app\Car;
 use app\Ssd;
+use app\Gadgets;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
@@ -21,8 +22,8 @@ class AboutController extends Controller
           /*   $articles = DB::select("SELECT * FROM `articles` WHERE id = ?",[6]);
              dump($articles);//dd();*/
 
-             $query = Ssd::query()
-                 ->select(['id', 'video', 'photo', 'audio', 'text', 'author'])
+             $query = Gadgets::query()
+                 ->select(['id', 'producer', 'screen', 'processor', 'color', 'price'])
                  ->orderBy('created_at', 'DESC');
 
 //             if (3 > 2) {
@@ -31,13 +32,13 @@ class AboutController extends Controller
 //                 $query->where('id', '=', 7);
 //             }
 
-             $ssd = $query->get();
+             $gadgets = $query->get();
 /*
              foreach ($homeworks AS $homework) {
                 dump($homework->id, $homework->title, $homework->description, $homework->author);
              }*/
 
-             $view = view('default.about', ['title'=>'Hello World', 'ssds' => $ssd]);
+             $view = view('default.about', ['title'=>'Hello World', 'gadgets' => $gadgets]);
              echo $view;
              return;
 

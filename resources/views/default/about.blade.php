@@ -33,12 +33,20 @@
     <pre>{!! $item->doors  !!}</pre>
 @endforeach--}}
 
-@foreach($ssds AS $item)
+{{--@foreach($ssds AS $item)
     <h1>{{ $item->video }}</h1>
     <pre>{!! $item->photo  !!}</pre>
     <pre>{!! $item->audio  !!}</pre>
     <pre>{!! $item->text  !!}</pre>
     <pre>{!! $item->author  !!}</pre>
+@endforeach--}}
+
+@foreach($gadgets AS $item)
+    <h1>{{ $item->producer }}</h1>
+    <pre>{!! $item->screen  !!}</pre>
+    <pre>{!! $item->processor  !!}</pre>
+    <pre>{!! $item->color  !!}</pre>
+    <pre>{!! $item->price  !!}</pre>
 @endforeach
 
 
