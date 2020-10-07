@@ -42,7 +42,7 @@
 @endforeach--}}
 
 @foreach($gadgets AS $item)
-    <h1>{{ $item->producer }}</h1>
+    <h3>{{ $item->producer }}</h3>
     <pre>{!! $item->screen  !!}</pre>
     <pre>{!! $item->processor  !!}</pre>
     <pre>{!! $item->color  !!}</pre>
@@ -51,7 +51,7 @@
 
 
     <div class="jumbotron">
-        <h2 class="display-4">Hello, About!</h2>
+        <h3 class="display-4">Hello, About!</h3>
         <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания к содержанию или информации.</p>
         <hr class="my-4">
         <p>Использются служебные классы для типографики и расстояния содержимого в контейнере большего размера.</p>
