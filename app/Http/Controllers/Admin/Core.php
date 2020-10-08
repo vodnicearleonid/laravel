@@ -52,16 +52,36 @@ class Core extends Controller
         //$gadgets = DB::table('gadgets')->take(3)->skip(1)->get();
         //$gadgets = DB::table('gadgets')->take(3)->skip(1)->get();
 
-        //$gadgets = DB::table('gadgets')->insert(['producer' => 'producer test','screen' => 'screen test']);
+       /* DB::table('gadgets')->insert(
+            ['producer' => 'john@example.com','screen' => 'ecran', 'processor' => 'amd, intel','color' => 'culoare','price' => 'pret',]
+        );*/
 
-        DB::table('gadgets')->insert(
+        /*DB::table('gadgets')->insert([
+            ['producer' => 'john@example.com','screen' => 'ecran', 'processor' => 'amd, intel','color' => 'culoare','price' => 'pret',]
+        ]);*/
+
+        /*DB::table('gadgets')->insert(
             [
-                ['color' => 'color test1','price' => 'price test1'],
-                ['color' => 'color test2','price' => 'price test2']
+                ['producer' => 'john@example.com','screen' => 'ecran', 'processor' => 'amd, intel','color' => 'culoare','price' => 'pret',],
+                ['producer' => 'john@example.com2','screen' => 'ecran2', 'processor' => 'amd2, intel','color' => 'culoare','price' => 'pret',],
+                ['producer' => 'john@example.com3','screen' => 'ecran3', 'processor' => 'amd3, intel','color' => 'culoare','price' => 'pret',],
+                ['producer' => 'john@example.com4','screen' => 'ecran4', 'processor' => 'amd4, intel','color' => 'culoare','price' => 'pret',],
             ]
-        );
+        );*/
 
-        //dump($gadgets);
+        //$result = DB::table('gadgets')->insertGetId(['producer' => 'john@example.com','screen' => 'ecran', 'processor' => 'amd, intel','color' => 'culoare','price' => 'pret']);
+
+
+         //$result = DB::table('gadgets')->where('id', 3)->update(['producer' => 'john@example.com','screen' => 'ecran', 'processor' => 'amd, intel','color' => 'culoare','price' => 'pret',]);
+        //$result = DB::table('gadgets')->where('id', 4)->delete();
+
+        /*JOIN 'gadgets' ON car.id = gadgets.id;
+            $result = DB::table('car')
+                ->join('gadgets', 'car.id', '=', 'gadgets.id')
+                ->select();
+                ->get();*/
+
+       // dump($result);
     }
 
     //lista cu articol
