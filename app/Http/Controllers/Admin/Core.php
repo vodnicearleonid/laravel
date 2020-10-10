@@ -2,6 +2,7 @@
 
 namespace app\Http\Controllers\Admin;
 
+use app\Article;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
 use DB;
@@ -15,6 +16,45 @@ class Core extends Controller
 
     //lista cu materiale
     public function getArticles(){
+
+        /*$articles = Article::all();
+        foreach ($articles as $article){
+            echo $article->text.'<br>';
+        }
+        dump($articles);
+        return;*/
+
+        //$articles = Article::where('id','>',8)->orderBy('id')->take(2)->get();
+
+        /*Article::chunk(2, function ($articles){
+           //
+        });*/
+
+        //$article = Article::find(10);
+        //$articles = Article::where('id',10)->first();
+        //$articles = Article::find([10,11,7]);
+        //$article = Article::findOrFail(100); //404 Not Found
+
+        //insert
+        /*$article = new Article();
+
+        $article->name = 'New Article';
+        $article->text = 'New Text';
+        //$article->img = 'New Img';
+
+        $article->save();
+        $articles = Article::all();*/
+
+        //update
+        $article = Article::find(26);
+        $article->text = 'New Name Update :)';
+        $article->save();
+
+        echo $article->text;
+        // dump($article);
+        return;
+
+        //$articles = DB::table('gadgets')->get();
         //$articles = DB::table('gadgets')->get();
         //$articles = DB::table('gadgets')->get()->first();
         //$articles = DB::table('gadgets')->value('color');
