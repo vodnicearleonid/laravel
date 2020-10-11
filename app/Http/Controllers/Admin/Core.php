@@ -46,12 +46,23 @@ class Core extends Controller
         $articles = Article::all();*/
 
         //update
-        $article = Article::find(26);
+        /*$article = Article::find(26);
         $article->text = 'New Name Update :)';
         $article->save();
 
-        echo $article->text;
-        // dump($article);
+        echo $article->text;*/
+
+        //adaugare info in baza de date
+        Article::create(
+            [
+                'name'=>'Hellow World Article::create()',
+                'text'=>'Some Text Article::create()'
+            ]
+        );
+
+        $article = Article::all();
+        //echo $article->text;
+        dump($article);
         return;
 
         //$articles = DB::table('gadgets')->get();
@@ -125,13 +136,11 @@ class Core extends Controller
     }
 
     //lista cu articol
-    public function getArticle($id){
+   public function getArticle($id){
         echo '  Raspuns - '. $id;
     }
 
 }
 /*$query = DB::table('gadgets')->distinct()->select('price');
         $users = $query->addSelect('producer')->get();*/
-
-
 
