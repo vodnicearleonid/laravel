@@ -53,12 +53,26 @@ class Core extends Controller
         echo $article->text;*/
 
         //adaugare info in baza de date
-        Article::create(
+        /*Article::create(
             [
                 'name'=>'Hellow World Article::create()',
                 'text'=>'Some Text Article::create()'
             ]
-        );
+        );*/
+
+        /*$article = Article::firstOrCreate([
+            'name'=>'Hellow World Article::create()',
+            'text'=>'Some Text Article::create()'
+        ]);*/
+
+        /*$article = Article::firstOrNew([
+            'name'=>'Hellow World Article::create()test',
+            'text'=>'Some Text Article::create()'
+        ]);
+        $article->save();*/
+
+        $article = Article::find(20);
+        $article->delete();
 
         $article = Article::all();
         //echo $article->text;

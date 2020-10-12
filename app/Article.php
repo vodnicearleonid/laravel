@@ -12,4 +12,5 @@ class Article extends Model
     public $timestamps = TRUE;
     //protected $timestamps = FALSE;
     protected $fillable = ['name', 'text'];
+    protected $guarded = ['*'];
 }
