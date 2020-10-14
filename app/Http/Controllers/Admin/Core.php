@@ -71,8 +71,10 @@ class Core extends Controller
         ]);
         $article->save();*/
 
-        $article = Article::find(20);
-        $article->delete();
+        //$article = Article::find(20);
+        //$article->delete();
+        //Article::destroy(12,13,14,15,16,17,18);
+        Article::where('id','>','26')->delete();
 
         $article = Article::all();
         //echo $article->text;
