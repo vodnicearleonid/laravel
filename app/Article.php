@@ -3,9 +3,11 @@
 namespace app;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
+    use SoftDeletes;
     protected $table = 'articles';
     //protected $primaryKey = 'id';
     public $incrementing = TRUE;
@@ -13,4 +15,5 @@ class Article extends Model
     //protected $timestamps = FALSE;
     protected $fillable = ['name', 'text'];
     protected $guarded = ['*'];
+    protected $dates = ['deleted_at'];
 }

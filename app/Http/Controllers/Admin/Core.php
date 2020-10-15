@@ -74,7 +74,39 @@ class Core extends Controller
         //$article = Article::find(20);
         //$article->delete();
         //Article::destroy(12,13,14,15,16,17,18);
-        Article::where('id','>','26')->delete();
+        //Article::where('id','>','26')->delete();
+
+        /*$article = Article::find(8);
+        $article->delete();*/
+
+        /*$articles = Article::withoutTrashed()->get();
+
+        foreach ($articles as $article){
+            if($article->trashed()){
+                echo $article->id.' Deleted <br />';
+            }
+            else{
+                echo $article->id.' no Deleted <br />';
+            }
+        }*/
+
+        //$articles = Article::withoutTrashed()->restore();
+        //$articles = Article::onlyTrashed()->restore();
+
+        /*$articles = Article::withoutTrashed()->get();
+
+        foreach ($articles as $article){
+            if($article->trashed()){
+                echo $article->id.' Deleted <br />';
+                $article->restore();
+            }
+            else{
+                echo $article->id.' no Deleted <br />';
+            }
+        }*/
+
+        $article = Article::find(9);
+        $article->forceDelete();
 
         $article = Article::all();
         //echo $article->text;
