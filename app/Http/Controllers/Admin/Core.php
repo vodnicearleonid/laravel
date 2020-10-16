@@ -106,7 +106,7 @@ class Core extends Controller
         }*/
 
         $article = Article::find(9);
-        $article->forceDelete();
+        //$article->forceDelete();
 
         $article = Article::all();
         //echo $article->text;

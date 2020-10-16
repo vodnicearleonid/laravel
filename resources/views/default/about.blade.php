@@ -51,6 +51,10 @@
 
 
     <div class="jumbotron">
+
+        <iframe style="border: 0; width: 305px; height: 95px; overflow: hidden;" src="https://zello.com/channel-listen-widget?channel=RO%20TIR%20EUROPA" scrolling="no"></iframe>
+
+
         <h3 class="display-4">Hello, About!</h3>
         <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания к содержанию или информации.</p>
         <hr class="my-4">
