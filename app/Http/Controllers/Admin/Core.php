@@ -3,6 +3,7 @@
 namespace app\Http\Controllers\Admin;
 
 use app\Article;
+use app\User;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
 use DB;
@@ -105,12 +106,13 @@ class Core extends Controller
             }
         }*/
 
-        $article = Article::find(9);
+        //$article = Article::find(9);
         //$article->forceDelete();
+        $user = User::find(1);
 
-        $article = Article::all();
+        //$article = Article::all();
         //echo $article->text;
-        dump($article);
+        dump($user);
         return;
 
         //$articles = DB::table('gadgets')->get();
