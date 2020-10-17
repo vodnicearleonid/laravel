@@ -3,6 +3,7 @@
 namespace app\Http\Controllers\Admin;
 
 use app\Article;
+use app\Country;
 use app\User;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
@@ -108,11 +109,15 @@ class Core extends Controller
 
         //$article = Article::find(9);
         //$article->forceDelete();
-        $user = User::find(1);
+        //$user = User::find(1);
+        $country = Country::find(1);
 
         //$article = Article::all();
         //echo $article->text;
-        dump($user);
+
+        //$country = $user->country;
+
+        dump($country);
         return;
 
         //$articles = DB::table('gadgets')->get();

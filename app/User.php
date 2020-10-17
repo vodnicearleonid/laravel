@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function country(){
-        return $this->hasOne('App\Country');
+        return $this->hasOne('App\Country', 'user_id', 'id');
     }
 }
