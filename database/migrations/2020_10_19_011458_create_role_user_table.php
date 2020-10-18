@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddArticlesToUserTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,16 @@ class AddArticlesToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            //
+        Schema::create('role_user', function (Blueprint $table) {
+            $table->increments('id');
+
             $table->integer('user_id')->unsigned()->default(1);
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->integer('role_id')->unsigned()->default(1);
+            $table->foreign('role_id')->references('id')->on('roles');
+
+            $table->timestamps();
         });
     }
 
@@ -27,8 +33,6 @@ class AddArticlesToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('role_user');
     }
 }

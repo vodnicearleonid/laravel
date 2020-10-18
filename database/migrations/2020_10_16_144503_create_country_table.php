@@ -20,13 +20,16 @@ class CreateCountryTable extends Migration
     }*/
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->integer('user_id')->unsigned()->default(1);
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('countries')){
+            Schema::create('countries', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->integer('user_id')->unsigned()->default(1);
+                $table->foreign('user_id')->references('id')->on('users');
+                $table->timestamps();
+            });
+        }
+
     }
 
     /**

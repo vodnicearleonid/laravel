@@ -4,6 +4,7 @@ namespace app\Http\Controllers\Admin;
 
 use app\Article;
 use app\Country;
+use app\Role;
 use app\User;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
@@ -109,15 +110,34 @@ class Core extends Controller
 
         //$article = Article::find(9);
         //$article->forceDelete();
-        //$user = User::find(1);
-        $country = Country::find(1);
+
+        //$country = Country::find(1);
 
         //$article = Article::all();
         //echo $article->text;
 
         //$country = $user->country;
 
-        dump($country);
+
+        /*foreach ($articles as $article){
+            echo $article->name.'<br>';
+        }*/
+        /*$user = User::find(2);
+        $articles = $user->articles()->where('id','10')->first();*/
+
+//****************************************
+
+        /*$user = User::find(1);
+
+        $article = Article::find(10);
+        dump($article->user->name);
+        return;*/
+
+//****************************************
+
+        //$user = User::find(1);
+        $role = Role::find(1);
+        dump($role);
         return;
 
         //$articles = DB::table('gadgets')->get();
@@ -198,4 +218,5 @@ class Core extends Controller
 }
 /*$query = DB::table('gadgets')->distinct()->select('price');
         $users = $query->addSelect('producer')->get();*/
+
 
