@@ -8,7 +8,7 @@ use app\Role;
 use app\User;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class Core extends Controller
 {
@@ -136,9 +136,22 @@ class Core extends Controller
 //****************************************
 
         //$user = User::find(1);
-        $role = Role::find(1);
+        /*$role = Role::find(1);
         dump($role);
+        return;*/
+
+        //$articles = Article::all();
+        //$users = User::all();
+        $users = User::with('articles', 'roles')->get();
+
+        //$articles = Article::with('user')->get();
+
+        //$articles->load('user');
+        foreach ($users as $user) {
+            dump($user);
+        }
         return;
+        //dump($articles);
 
         //$articles = DB::table('gadgets')->get();
         //$articles = DB::table('gadgets')->get();
