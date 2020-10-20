@@ -142,10 +142,10 @@ class Core extends Controller
 
         //$articles = Article::all();
         //$users = User::all();
-        $users = User::with('articles', 'roles')->get();
+
 
         //$articles = Article::with('user')->get();
-
+        $users = User::with('articles', 'roles')->get();
         //$articles->load('user');
         foreach ($users as $user) {
             dump($user);
