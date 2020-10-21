@@ -145,12 +145,13 @@ class Core extends Controller
 
 
         //$articles = Article::with('user')->get();
-        $users = User::with('articles', 'roles')->get();
+        //$users = User::with('articles', 'roles')->get();
+        //  $users = User::has('articles', '>=', '3')->get();
         //$articles->load('user');
-        foreach ($users as $user) {
+        /*foreach ($users as $user) {
             dump($user);
         }
-        return;
+        return;*/
         //dump($articles);
 
         //$articles = DB::table('gadgets')->get();
@@ -221,11 +222,28 @@ class Core extends Controller
                 ->get();*/
 
        // dump($result);
+
+        /*$user = User::find(2);
+        $article = new Article([
+            'name' => 'new test article',
+            'text' => 'same test text'
+        ]);
+        $user->articles()->save($article);
+        $articles = Article::all();
+        dump($articles);
+        return;*/
+
+        $user = User::find(2);
+        $user->articles()->where('id', 26)->update(['name'=>'new test']);
+        $articles = Article::find(26);
+        dump($articles);
+        return;
+
     }
 
     //lista cu articol
    public function getArticle($id){
-        echo '  Raspuns - '. $id;
+        echo 'Raspuns - '. $id;
     }
 
 }

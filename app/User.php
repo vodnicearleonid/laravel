@@ -41,6 +41,10 @@ class User extends Authenticatable
     {
     }
 
+    public static function has(string $string)
+    {
+    }
+
     public function country(){
         return $this->hasOne('App\Country', 'user_id', 'id');
     }
