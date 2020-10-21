@@ -233,8 +233,18 @@ class Core extends Controller
         dump($articles);
         return;*/
 
-        $user = User::find(2);
-        $user->articles()->where('id', 26)->update(['name'=>'new test']);
+        /*$user = User::find(2);
+        $article = new Article([
+            'name' => 'new test article',
+            'text' => 'same test text'
+        ]);
+        $role = new Role(['name'=>'guest']);
+        $user->roles()->save($role);
+        return;*/
+
+
+        $user = User::find(1);
+        //$user->articles()->where('id', 26)->update(['name'=>'new test']);
         $articles = Article::find(26);
         dump($articles);
         return;
