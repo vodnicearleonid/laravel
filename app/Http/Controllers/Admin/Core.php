@@ -243,10 +243,11 @@ class Core extends Controller
         return;*/
 
 
-        $user = User::find(1);
-        //$user->articles()->where('id', 26)->update(['name'=>'new test']);
-        $articles = Article::find(26);
-        dump($articles);
+        $country = Country::find(2);
+        $user = User::find(2);
+        $country->user()->associate($user);
+        $country->save();
+
         return;
 
     }
