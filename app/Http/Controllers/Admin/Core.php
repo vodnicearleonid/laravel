@@ -243,10 +243,17 @@ class Core extends Controller
         return;*/
 
 
-        $country = Country::find(2);
+        /*$country = Country::find(2);
         $user = User::find(2);
         $country->user()->associate($user);
-        $country->save();
+        $country->save();*/
+
+        $articles = Article::all();
+        $user = User::find(1);
+        foreach ($articles as $article){
+            $article->user()->associate($user);
+            $article->save();
+        }
 
         return;
 
