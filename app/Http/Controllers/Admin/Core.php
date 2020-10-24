@@ -248,12 +248,48 @@ class Core extends Controller
         $country->user()->associate($user);
         $country->save();*/
 
-        $articles = Article::all();
+        /*$articles = Article::all();
         $user = User::find(1);
         foreach ($articles as $article){
             $article->user()->associate($user);
             $article->save();
-        }
+        }*/
+
+        /*$user = User::find(2);
+        $role_id = Role::find(2)->id;
+        $user->roles()->attach($role_id);*/
+
+        /*$user = User::find(2);
+        $role_id = Role::find(2)->id;
+        $user->roles()->dettach($role_id);*/
+
+        /*// Hello World - New Article - Hello World
+        $article = Article::find(24);
+        echo $article->name;*/
+
+        //Attribute Casting
+        //The $casts
+
+        /*$article = Article::find(24);
+        //$article->name = 'Some text';
+        echo $article->name;*/
+
+        /*$article = Article::find(8);
+        $arr = ['key'=>'hello world TEST'];
+        $article->text = $arr;
+        $article->save();*/
+
+        /*$article = Article::find(26);
+        dump($article->text);*/
+
+        /*$article = Article::find(26);
+        dump($article->toArray());*/
+
+        /*$article = Article::find(26);
+        dump($article->toJson());*/
+
+        $article = Article::find(26);
+        dump((string)$article);
 
         return;
 

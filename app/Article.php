@@ -17,7 +17,23 @@ class Article extends Model
     protected $guarded = ['*'];
     protected $dates = ['deleted_at'];
 
+    //Attribute Casting
+    //The $casts
+    protected $casts = [
+        'name' => 'boolean',
+        'text' => 'array',
+    ];
+
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    /*public function getNameAttribute($value){
+        return 'Hello World - '.$value.' - Hello World';
+    }
+
+    public function setNameAttribute($value){
+        // kod..
+        $this->attributes['name'] = ' | '.$value.' | ';
+    }*/
 }
