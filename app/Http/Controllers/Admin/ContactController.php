@@ -17,6 +17,18 @@ class ContactController extends Controller
 
     // mai jos, modalitati de afisare a datelor din array
     public function show(Request $request, $id=FALSE){
+
+        if ($request->isMethod('post')){
+            $rules = [
+                'name'=>'required|max:10',
+                'email'=>'required|email'
+            ];
+            $this->validate($request, $rules);
+            // kod
+            dump($request->all());
+
+        }
+
         //print_r($request->all());
         //print_r = $request->only('name','site');
         //print_r = $request->except('name','site');
